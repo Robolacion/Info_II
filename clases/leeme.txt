@@ -1,0 +1,1 @@
+No ejecutar programas sin el conocimiento de su estructura puesto que lo escribio un servidor y uno incompleto podria obligar a reiniciar la pc
