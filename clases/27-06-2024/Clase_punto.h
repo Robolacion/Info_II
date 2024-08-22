@@ -12,10 +12,6 @@ class complex
        void print_complex();
        void set_real(float input);
        void set_img(float input);
-    
-
-
-    
 };
 
 complex::complex()
