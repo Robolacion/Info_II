@@ -15,6 +15,20 @@ Din_Vmk::Din_Vmk(Din_Vmk& aux){
     aux.v=new int[size];
 
 }
+//operadores
+
+/*int Din_Vmk::operator[](int n){
+    return get_v(n);
+}*/
+
+int& Din_Vmk::operator[](int pos){
+    if(size>pos && pos<size)
+    return v[pos]; 
+}
+void Din_Vmk::operator=(Din_Vmk& x){
+    resize(x.size);
+}
+
 // Desarrollo
 void Din_Vmk::set_v(int pos, int val)
 {
@@ -28,14 +42,7 @@ int Din_Vmk::get_v(int pos)
     else
         exit;
 }
-/*int Din_Vmk::operator[](int n){
-    return get_v(n);
-}*/
 
-int& Din_Vmk::operator[](int pos){
-    if(size>pos && pos<size)
-    return v[pos]; 
-}
 
 void Din_Vmk::resize(int new_size){
   int i=0,n[size];
@@ -43,6 +50,7 @@ void Din_Vmk::resize(int new_size){
     {
      n[i]=v[i];
     }
+    delete[]v;
     v=new int[new_size];
     for(i=0;i<size;i++)
     {
@@ -58,6 +66,7 @@ void Din_Vmk:: concat(Din_Vmk v2){
     {
      n[i]=v[i];
     }
+    delete[]v;
     v=new int [new_size];
     for (i = 0; i < new_size; i++)
     {
